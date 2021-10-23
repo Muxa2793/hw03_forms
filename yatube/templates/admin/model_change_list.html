@@ -1,0 +1,32 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous">
+  </script>
+  <form action="import/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="container custom-file">
+    <div class="row">
+      <div class="col-sm-4">
+        <input type="file" class="custom-file-input" id="myFile" name="filename">
+        <label class="custom-file-label" for="myFile">Choose file for import</label>
+      </div>
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Import</button>
+      </div>
+    </div>
+  </div>
+  </form>
+
+      <script>
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $('.custom-file-label').html(fileName);
+        });
+      </script>
+    {{ block.super }}
+{% endblock %}

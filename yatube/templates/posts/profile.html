@@ -5,11 +5,9 @@
 {% endblock %}
 
 {% block content %}
-  
   <div class="container py-5">        
     <h1>Все посты пользователя {{ user_db.get_full_name }} </h1>
     <h3>Всего постов: {{ posts_count }} </h3>   
-    
     {% for post in  page_obj %}
       <article>
         <ul>
@@ -34,17 +32,13 @@
           </div>
         </div>
       </article>
-
       {% if post.group.slug %}       
         <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a> 
       {% endif %}      
-
       {% if not forloop.last %}
         <hr>
       {% endif %}
     {% endfor %}
-
     {% include 'posts/includes/paginator.html' %}
   </div>
-
 {% endblock %}

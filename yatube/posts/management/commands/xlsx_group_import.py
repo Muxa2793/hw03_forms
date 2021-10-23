@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand
-
 from posts.models import Group
-from posts.parsers.xlsx_group_parser import XLSXGroupParser
+from posts.parsers.xlsx_group_parser import xlsx_group_parser
 
 
 class Command(BaseCommand):
@@ -12,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         file = options['file']
-        groups = XLSXGroupParser(file[0])
+        groups = xlsx_group_parser(file[0])
         for group in groups:
             Group.objects.get_or_create(
                 title=group.title,

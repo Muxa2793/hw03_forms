@@ -3,7 +3,6 @@ from django.contrib import admin
 from django.core.management import call_command
 from django.http import HttpResponseRedirect
 
-
 from .models import Group, Post
 
 

@@ -11,7 +11,7 @@ class Group:
         return self.title
 
 
-def XLSXGroupParser(file):
+def xlsx_group_parser(file):
     wb = load_workbook(filename=file, read_only=True)
     ws = wb.active
     groups_data = [Group(row_parser(row)) for row in ws.iter_rows(min_row=2)]

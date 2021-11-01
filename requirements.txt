@@ -32,3 +32,4 @@ zipp==2.2.0               # via importlib-metadata
 openpyxl
 et-xmlfile==1.1.0
 openpyxl==3.0.9
+coverage==6.0.2

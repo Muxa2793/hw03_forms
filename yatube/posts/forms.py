@@ -13,5 +13,4 @@ class PostForm(forms.ModelForm):
         print(data)
         if data == '':
             raise forms.ValidationError('Пост должен содержать какой-то текст')
-
         return data

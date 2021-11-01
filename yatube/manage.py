@@ -19,6 +19,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# Запуск сервера - python3 manage.py runserver
-# Создание приложения - python3 manage.py startapp <name_app>

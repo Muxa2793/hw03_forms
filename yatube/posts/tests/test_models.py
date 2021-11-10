@@ -28,7 +28,7 @@ class PostsModelsTest(TestCase):
         )
 
     def setUp(self):
-        '''Preparations before the testing.'''
+        '''Preparation before the testing.'''
         self.post = PostsModelsTest.post
 
     def test_models_have_correct_object_names(self):
